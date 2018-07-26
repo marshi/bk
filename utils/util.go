@@ -2,7 +2,7 @@ package utils
 
 import "github.com/mitchellh/go-homedir"
 
-func HistoryFile() (string, error){
+func HistoryFile() (string, error) {
 	home, e := homedir.Dir()
 	if e != nil {
 		return "", e

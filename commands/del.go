@@ -2,10 +2,10 @@ package commands
 
 import (
 	"bk/utils"
-	"os"
 	"bufio"
 	"fmt"
 	"github.com/urfave/cli"
+	"os"
 	"strings"
 )
 
