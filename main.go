@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
-	"github.com/urfave/cli"
 	"bk/commands"
+	"github.com/urfave/cli"
+	"os"
 )
 
 func main() {
@@ -13,18 +13,18 @@ func main() {
 	app.Version = "1.0.0"
 	app.Commands = []cli.Command{
 		{
-			Name: "show",
-			Usage: "",
+			Name:   "show",
+			Usage:  "",
 			Action: commands.Show,
 		},
 		{
-			Name: "save",
-			Usage: "",
+			Name:   "save",
+			Usage:  "",
 			Action: commands.Save,
 		},
 		{
-			Name: "del",
-			Usage: "",
+			Name:   "del",
+			Usage:  "",
 			Action: commands.Delete,
 			Flags: []cli.Flag{
 				cli.StringFlag{
