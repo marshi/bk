@@ -26,11 +26,6 @@ func main() {
 			Name:   "del",
 			Usage:  "",
 			Action: commands.Delete,
-			Flags: []cli.Flag{
-				cli.StringFlag{
-					Name: "path",
-				},
-			},
 		},
 	}
 	if 1 < len(os.Args) {

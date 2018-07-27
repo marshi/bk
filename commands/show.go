@@ -2,10 +2,11 @@ package commands
 
 import (
 	"bk/utils"
-	"bufio"
-	"fmt"
-	"github.com/urfave/cli"
+		"github.com/urfave/cli"
 	"os"
+		"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 func Show(c *cli.Context) error {
@@ -15,9 +16,12 @@ func Show(c *cli.Context) error {
 	if e != nil {
 		return e
 	}
-	scanner := bufio.NewScanner(historyFile)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+	bytes, e := ioutil.ReadAll(historyFile)
+	if e != nil {
+		return e
 	}
+	texts := string(bytes)
+	texts = strings.TrimRight(texts, "\n")
+	fmt.Println(texts)
 	return nil
 }

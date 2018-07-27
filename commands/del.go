@@ -7,10 +7,27 @@ import (
 	"github.com/urfave/cli"
 	"os"
 	"strings"
-)
+	"os/exec"
+	"io"
+	"bytes"
+	)
 
 func Delete(c *cli.Context) error {
-	deletePath := c.String("path")
+	show := exec.Command("bk", "show")
+	peco := exec.Command("peco")
+	r, w := io.Pipe()
+	show.Stdout = w
+	peco.Stdin = r
+	var out bytes.Buffer
+	peco.Stdout = &out
+
+	show.Start()
+	peco.Start()
+	show.Wait()
+	w.Close()
+	peco.Wait()
+	deletePath := strings.TrimRight(out.String(), "\n")
+
 	historyFileName, e := utils.HistoryFile()
 	historyFile, e := os.OpenFile(historyFileName, os.O_RDONLY, 0600)
 	if e != nil {
