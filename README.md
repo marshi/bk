@@ -39,8 +39,20 @@ QUERY>                                                                          
 
 # Install
 
+### required
+
+- golang
+
+- peco.
+
+```
+brew isntall peco
+```
+
 build go src and make symbolic link.
 
 ```
 make 
 ```
+
+Completed!! :tada:
