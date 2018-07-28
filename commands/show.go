@@ -22,6 +22,9 @@ func Show(c *cli.Context) error {
 	}
 	texts := string(bytes)
 	texts = strings.TrimRight(texts, "\n")
+	if len(texts) == 0 {
+		return nil
+	}
 	fmt.Println(texts)
 	return nil
 }

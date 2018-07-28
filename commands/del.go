@@ -41,11 +41,17 @@ func Delete(c *cli.Context) error {
 			texts = texts + t + "\n"
 		}
 	}
-	texts = strings.TrimRight(texts, "\n")
 	historyFile.Close()
-
-	historyFileW, e := os.OpenFile(historyFileName, os.O_WRONLY|os.O_TRUNC, 0600)
-	fmt.Fprintln(historyFileW, texts)
-	historyFileW.Close()
+	texts = strings.TrimRight(texts, "\n")
+	if len(texts) == 0 {
+		exec.Command("cp", "/dev/null", historyFileName).Start()
+	} else {
+		historyFileW, e := os.OpenFile(historyFileName, os.O_WRONLY|os.O_TRUNC, 0600)
+		if e != nil {
+			return e
+		}
+		fmt.Fprintln(historyFileW, texts)
+		historyFileW.Close()
+	}
 	return nil
 }
