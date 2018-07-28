@@ -29,7 +29,7 @@ QUERY>                                                                          
 jm changes current directory to a directory which is one of saved by bk command. 
 
 ```
-% . jm
+% . jm   /* MUST NEED dot command */
 QUERY>                                                                                                                                                                                  IgnoreCase [2 (1/1)]
 /var     /* choose /var */
 /tmp
