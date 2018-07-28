@@ -3,7 +3,7 @@
 ## bk
 bk bookmarks your current directory.
 
-```
+```bash
 % pwd
 /tmp
 % bk save
@@ -16,7 +16,7 @@ bk bookmarks your current directory.
 /var
 ```
 
-```
+```bash
 % bk del
 QUERY>                                                                                                                                                                                  IgnoreCase [2 (1/1)]
 /tmp     /* choose /tmp */
@@ -28,7 +28,7 @@ QUERY>                                                                          
 ## jm
 jm changes current directory to a directory which is one of saved by bk command. 
 
-```
+```bash
 % . jm   /* MUST NEED dot command OR make alias */
 QUERY>                                                                                                                                                                                  IgnoreCase [2 (1/1)]
 /var     /* choose /var */
@@ -38,7 +38,7 @@ QUERY>                                                                          
 ```
 
 alias example in ~/.bash_profile
-```
+```bash
 alias jm='. jm'
 ```
 
