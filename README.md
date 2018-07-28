@@ -57,7 +57,8 @@ brew isntall peco
 build go src and make symbolic link.
 
 ```
-make 
+make build
+make install
 ```
 
 Completed!! :tada:
