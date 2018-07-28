@@ -14,17 +14,20 @@ func main() {
 	app.Commands = []cli.Command{
 		{
 			Name:   "show",
-			Usage:  "",
+			Usage:  "bk show",
+			Description: "show bookmarked directories.",
 			Action: commands.Show,
 		},
 		{
 			Name:   "save",
-			Usage:  "",
+			Usage:  "bk save",
+			Description: "bookmark your current directory.",
 			Action: commands.Save,
 		},
 		{
 			Name:   "del",
-			Usage:  "",
+			Usage:  "bk del",
+			Description: "delete bookmarked directory.",
 			Action: commands.Delete,
 		},
 	}
