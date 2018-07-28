@@ -26,7 +26,7 @@ QUERY>                                                                          
 ```
 
 ## jm
-jm changes current directory to a directory which is one of saved by bk command. 
+jump from current directory to a directory which is one of saved by bk command. 
 
 ```bash
 % . jm   /* MUST NEED dot command OR make alias */
