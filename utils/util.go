@@ -7,6 +7,6 @@ func HistoryFile() (string, error) {
 	if e != nil {
 		return "", e
 	}
-	historyFileName := home + "/.jd_history"
+	historyFileName := home + "/.bkjm_history"
 	return historyFileName, e
 }

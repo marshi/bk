@@ -13,7 +13,10 @@ func Save(c *cli.Context) error {
 	historyFile, e := os.OpenFile(historyFileName, os.O_RDWR|os.O_APPEND, 0600)
 	defer historyFile.Close()
 	if e != nil {
-		return e
+		historyFile, e = os.OpenFile(historyFileName, os.O_CREATE|os.O_WRONLY, 0600)
+		if e != nil {
+			return e
+		}
 	}
 	currentDirName, e := os.Getwd()
 	if e != nil {

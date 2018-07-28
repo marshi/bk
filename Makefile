@@ -1,12 +1,11 @@
-all:
-	build install
+all: make install
 
 make:
-	go build -o build/bk
+	go build -o ${CURDIR}/build/bk
 
-install:
-	ln -s ${CURDIR}/build/bk /usr/local/bin/bk > /dev/null
-	ln -s ${CURDIR}/sh/jm.sh /usr/local/bin/jm > /dev/null
+install: uninstall
+	ln -s ${CURDIR}/build/bk /usr/local/bin/bk
+	ln -s ${CURDIR}/sh/jm.sh /usr/local/bin/jm
 
 uninstall:
 	rm /usr/local/bin/bk
