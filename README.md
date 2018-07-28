@@ -37,6 +37,11 @@ QUERY>                                                                          
 /var     /* change current directory */
 ```
 
+alias example in ~/.bash_profile
+```
+alias jm='. jm'
+```
+
 # Install
 
 ### required
